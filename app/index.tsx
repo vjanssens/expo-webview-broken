@@ -1,4 +1,5 @@
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
+import WebView from "react-native-webview";
 
 export default function Index() {
   return (
@@ -9,7 +10,18 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>Before</Text>
+      <WebView style={styles.container} originWhitelist={["*"]} source={{ uri: 'https://reactnative.dev/' }} />
+      <Text>After</Text>
     </View>
   );
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    // flex: 1,
+    // height: 10,
+    // marginTop: 10,
+  },
+});
